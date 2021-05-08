@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not "\x3ch1" in page.content %}
+<div class="content-header">
+  <h1>{{ page.meta.title | d(config.site_name, true)}}</h1>
+</div>
+{% endif %}
+
+<section class="intro-section">
+  {{ page.content }}
+</section>
+
+<section class="filter-section">
+  <h2 class="sub-heading">Samples</h2>
+  <div class="search-input-wrapper float-l" aria-hidden="true">
+    <div class="icon-container">
+      &nbsp;
+    </div>
+    <input id="post-search-input" class="search-input" placeholder="Search samples">
+  </div>
+
+  <!-- <div id="post-tags-filter-btn" class="primary-btn dark float-r">Filter by tags
+    <p id="post-tags-filter-count" class="tag-number">0</p>
+  </div> 
+-->
+
+
+  <div id="filters" class="sample-list filter-list float-r">
+    <div id="post-sample-filter-all" class="sampletype-item filter-choice active" data-filter="*"
+      title="All extension types">
+      All</div>
+      <div id="post-sample-filter-application" class="sampletype-item filter-choice application" data-filter="[data-type='application']"
+      title="Application customizer"></div>
+    <div id="post-sample-filter-command" class="sampletype-item filter-choice command" data-filter="[data-type='command']"
+      title="ListView command set"></div>
+    <div id="post-sample-filter-field" class="sampletype-item filter-choice field" data-filter="[data-type='field']"
+      title="Field customizer"></div>
+    <div id="post-sample-filter-search" class="sampletype-item filter-choice search"
+      data-filter="[data-type='search']" title="Search query"></div>
+  </div>
+
+  <div class="well">
+    <div class="button-group filters-button-group">
+      {% for filter in page.meta.filters %}
+      <button class="button" data-filter="[data-tag='{{ filter.value }}']">{{ filter.name }}</button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="grid" id="sample-listing" data-filter={{page.meta.filter}}>
+
+  </div>
+
+  <div id="noresults">
+    No results found.
+  </div>
+  
+</section>
+
+<!-- Last update of source file -->
+{% if page and page.meta %}
+{% if page.meta.git_revision_date_localized or
+page.meta.revision_date
+%}
+{% include "partials/source-date.html" %}
+{% endif %}
+{% endif %}
+{% endblock %}
