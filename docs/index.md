@@ -1,6 +1,24 @@
 ---
 title: Samples by Extension Type
-template: filtertype.html
+template: filter.html
+filteroptions:
+    - name: all
+      title: All extension types
+      displayname: All
+      filter: '*'
+      active: true
+    - name: application
+      title: Application customizer
+      filter: '[data-type=''application'']'
+    - name: command
+      title: ListView command set
+      filter: '[data-type=''command'']'
+    - name: field
+      title: Field customizer
+      filter: '[data-type=''field'']'
+    - name: search
+      title: Search query
+      filter: '[data-type=''search'']'
 ---
 
 You can build many types of [client-side extensions](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/extensions/overview-extensions).
