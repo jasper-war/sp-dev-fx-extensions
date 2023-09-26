@@ -7,7 +7,9 @@ plugins:
     - markdownextradata
     - redirects:
         redirect_maps:
-          'samples/type.md': 'index.md'
+          'samples/type.md': 'https://aka.ms/spfx-extensions'
+          'samples/framework.md': 'https://aka.ms/spfx-extensions'
+          'samples/spfx.md': 'https://aka.ms/spfx-extensions'
 nav:
   # - Home: index.md
   - Samples:
