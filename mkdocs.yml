@@ -7,7 +7,11 @@ plugins:
     - markdownextradata
     - redirects:
         redirect_maps:
-          'samples/type.md': 'index.md'
+          'index.md': 'https://aka.ms/spfx-webparts'
+          'samples/type.md': 'https://aka.ms/spfx-webparts'
+          'samples/framework.md': 'https://aka.ms/spfx-webparts'
+          'samples/spfx.md': 'https://aka.ms/spfx-webparts'
+
 nav:
   # - Home: index.md
   - Samples:
