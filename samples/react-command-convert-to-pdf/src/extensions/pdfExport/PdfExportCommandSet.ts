@@ -171,9 +171,9 @@ export default class PdfExportCommandSet extends BaseListViewCommandSet<IPdfExpo
             let exists = true;
             try {
                 await web.getFileByServerRelativePath(pdfUrl).get();
-                DIALOG.error += `${file.pdfFileName} ${strings.Exists}.<br/>`;
+                DIALOG.message = `${file.pdfFileName} ${strings.Exists}!<br/>`;
                 DIALOG.render();
-                isOk = false;
+                isOk = true;
             } catch (error) {
                 exists = false;
             }
